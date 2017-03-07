@@ -1,0 +1,29 @@
+[API]
+Reorganize packages
+Add java doc to the gameengine API.
+Add STATE machine to AnimatedSprite with STATE transitions.
+AssetManager should load the tileMaps during load... maybe.
+--- IN PROGRESS ----- Properly implement Layers... maybe.
+only render what is visible.
+only update what is in range.
+Flesh out the SceneManager - serialize scenes?
+Player should implement/be composed with an EventHandler.
+
+[Game]
+Reorganize packages
+Internationalize
+Need to understand what gameplay is really about.
+UX for Menus
+	- hover/select each item should have a visual
+	- enable arrow keys up and down, each should have it's own audio cue
+	- enable mouse hover(over/out) and click, each should have it's own audio cue
+UX for Main Menu
+UX for Options Menu
+	- Music On/Off should fade in and out.  fade out faster, fade in slower.
+	
+Create Options Menu
+	Music on/off (maybe slider?)
+	Sfx on/off (maybe slider?)
+	Menu sounds on/off (maybe slider?)
+Activate menu options in Main Menu
+Activate menu options in Options Menu

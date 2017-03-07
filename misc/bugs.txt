@@ -1,0 +1,3 @@
+A given TileMap needs to have all tilesets used be the same size.  Jonah needs to fix test_world_01.tmx
+There is a pause before the Start Menu scene is displayed, maybe all scenes... Wassup?.
+There is a pause before input is handled, is this real or perceived?.

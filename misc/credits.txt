@@ -1,0 +1,16 @@
+# Game Development Open Source Tools Credits
+Tiled - level editor
+-- Jonah's open source art programs
+** Paint.net ** NOT OPEN SOURCE ANYMORE :(
+Eclipse
+-- fonts if any
+-- images/tilesets if any
+
+
+# L337 Game Engine Credits
+Eclipse
+Tiled - added to stdlib
+-- Tutorials, inspirations
+
+
+# GamePlan... I hope!
