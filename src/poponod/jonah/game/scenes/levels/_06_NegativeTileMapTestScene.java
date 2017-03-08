@@ -1,5 +1,6 @@
-package poponod.jonah.game.scenes.interiors;
+package poponod.jonah.game.scenes.levels;
 
+import java.awt.Color;
 import java.awt.Image;
 
 import l337.game.SceneBasedGame;
@@ -9,27 +10,34 @@ import l337.game.utils.tiled.TileMap.TileSetListNullPointerException;
 import l337.game.utils.tiled.TileSprite;
 import l337.game.utils.tiled.TmxLoader;
 import poponod.jonah.game.scenes.GamePlayScene;
+import poponod.jonah.game.scenes.interiors._04_IndoorTestScene;
 import poponod.jonah.sprites.Jonah;
 
-public class _04_IndoorTestScene extends GamePlayScene{
-
-	public _04_IndoorTestScene(SceneBasedGame game) {
+public class _06_NegativeTileMapTestScene extends GamePlayScene{
+	public _06_NegativeTileMapTestScene(SceneBasedGame game) {
 		super(game);
 	}
 
 	@Override
-	public void init() {		
+	public void init() {
+		game.getCanvas().setBackground(Color.white);
+
 		TileMap tileMap = null;
 		try {
-			tileMap = TmxLoader.loadMap(game.getAssetManager(), "Test_world_inside.tmx");
+			tileMap = TmxLoader.loadMap(game.getAssetManager(), "test_world_01_negative.tmx");
 		} catch (TileSetListNullPointerException e) {
 			throw new RuntimeException(e);
 		}
 
 		updateWorldDimensions(tileMap.getPixelWidth(), tileMap.getPixelHeight());
-				
-		tileMap.getLayer("floor").stream().forEach(tile -> addSprite(new TileSprite(game, tile)));
-		tileMap.getLayer("walls").stream().forEach(tile -> addSprite(new TileSprite(game, tile)));
+		// TODO add sprites to be drawn
+		// first water, then grass
+		
+		tileMap.getLayer("water").stream().forEach(tile -> addSprite(new TileSprite(game, tile)));
+		tileMap.getLayer("grass").stream().forEach(tile -> addSprite(new TileSprite(game, tile)));
+//		// TODO and buildings to YSortableSprites
+		tileMap.getLayer("buildings").stream().forEach(tile -> addSprite(new TileSprite(game, tile)));
+//				
 		
 		// init hero
 		final int numFrames = 4;
@@ -42,10 +50,9 @@ public class _04_IndoorTestScene extends GamePlayScene{
 		jonah.setPosition(getWidth()/2 - playerStartingAnimation[0].getWidth(null)/2, getHeight()/2 - playerStartingAnimation[0].getHeight(null)/2);
 		
 		SimpleBitmapSprite simpleBitmapSprite = new SimpleBitmapSprite(game, assetMgr.getImage("misc/endSprite.png"));
-		simpleBitmapSprite.centerAlign().middleAlign().canCollideWith(hero);
-		initEnd(simpleBitmapSprite, _05_NegativeIndoorTestScene.class.getName());
+		simpleBitmapSprite.rightAlign().bottomAlign().canCollideWith(hero);
+		initEnd(simpleBitmapSprite, _03_TileMapTestScene.class.getName());
 		
 		initHero(jonah);
-	}
-
+	}	
 }

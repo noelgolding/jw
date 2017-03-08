@@ -9,7 +9,7 @@ import poponod.jonah.sprites.MenuItemFontSprite;
 import poponod.jonah.sprites.MenuTitleFontSprite;
 
 public abstract class GameMenuScene extends AbstractMenuScene {
-	private static Color FG_COLOR = new Color(255, 197, 113);
+	private static Color FG_COLOR = new Color(201, 156, 91); // skin shadow // new Color(123, 76,28); // shorts // new Color(255, 197, 113);// arm color // 
 	private static Color BG_COLOR = new Color(15, 87, 137);
 	private static final int VSPACE = 50;
 	private int y = 0;
@@ -20,14 +20,14 @@ public abstract class GameMenuScene extends AbstractMenuScene {
 	
 	@Override
 	public void init() {
-		IntStream.of(1).forEach( i -> nextY());
+		nextY();
 		// TITLE
 		addSprite(new MenuTitleFontSprite(game, menuTitle, fgColor)
 				.setPosition(0, nextY())
 				.centerAlign());
 		
 		// Add some space between TITLE and menu items.
-		IntStream.of(1).forEach( i -> nextY());
+		nextY();
 		
 		// for each menu item create the appropriate sprite.
 		menuItems.stream()
@@ -35,6 +35,6 @@ public abstract class GameMenuScene extends AbstractMenuScene {
 	}
 	
 	private int nextY(){
-		return y += VSPACE*1.5;
+		return y += VSPACE * 1.5;
 	}
 }

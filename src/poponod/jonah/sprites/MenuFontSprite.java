@@ -12,29 +12,29 @@ import l337.game.sprite.FontSprite;
 
 public class MenuFontSprite extends FontSprite {
 	/** eh, not really great */
-	private static final String _style_7_bubble_bead  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_bead.ttf";
-	private static final String _pixel_noir  = "fonts/pixel_noir/Pixel-Noir.ttf";
-	private static final String _pixel_noir_skinny_caps  = "fonts/pixel_noir/Pixel-Noir Skinny Caps.ttf";
-	private static final String _pixel_noir_skinny_short  = "fonts/pixel_noir/Pixel-Noir Skinny Short.ttf";
-	private static final String _pixel_noir_skinny  = "fonts/pixel_noir/Pixel-Noir Skinny.ttf";
+	protected static final String _style_7_bubble_bead  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_bead.ttf";
+	protected static final String _pixel_noir  = "fonts/pixel_noir/Pixel-Noir.ttf";
+	protected static final String _pixel_noir_skinny_caps  = "fonts/pixel_noir/Pixel-Noir Skinny Caps.ttf";
+	protected static final String _pixel_noir_skinny_short  = "fonts/pixel_noir/Pixel-Noir Skinny Short.ttf";
+	protected static final String _pixel_noir_skinny  = "fonts/pixel_noir/Pixel-Noir Skinny.ttf";
 
 	/** I kinda like these */
-	private static final String _v5xtender  = "fonts/v5xtender/V5Xtende.ttf";
-	private static final String _game_classic  = "fonts/freaky-fonts_gamegirl-classic/Gamegirl.ttf";
-	private static final String _style_7_half_bold  = "fonts/style-7_half-bold-pixel-7/half_bold_pixel-7.ttf";
-	private static final String _style_7_bubble  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7.ttf";
-	private static final String _style_7_bubble_hatch  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_hatch.ttf";
-	private static final String _style_7_bubble_dark  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_dark.ttf";
-	private static final String _pixel_noir_caps  = "fonts/pixel_noir/Pixel-Noir Caps.ttf";
-	private static final String _8bitLimit  = "fonts/8-bit Limit_BRK.ttf"; // no apostrophe :(
-	private static final String _8bitOLimit  = "fonts/8-bit Limit O (BRK).ttf"; // no apostrophe :(
+	protected static final String _v5xtender  = "fonts/v5xtender/V5Xtende.ttf";
+	protected static final String _game_classic  = "fonts/freaky-fonts_gamegirl-classic/Gamegirl.ttf";
+	protected static final String _style_7_half_bold  = "fonts/style-7_half-bold-pixel-7/half_bold_pixel-7.ttf";
+	protected static final String _style_7_bubble  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7.ttf";
+	protected static final String _style_7_bubble_hatch  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_hatch.ttf";
+	protected static final String _style_7_bubble_dark  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_dark.ttf";
+	protected static final String _pixel_noir_caps  = "fonts/pixel_noir/Pixel-Noir Caps.ttf";
+	protected static final String _8bitLimit  = "fonts/8-bit Limit_BRK.ttf"; // no apostrophe :(
+	protected static final String _8bitOLimit  = "fonts/8-bit Limit O (BRK).ttf"; // no apostrophe :(
 
 	
 	/** My favorites */
-	private static final String _8bit_wonder  = "fonts/8bit_wonder/8-BIT WONDER.TTF"; // no apostrophe :(
-	private static final String _fipps  = "fonts/fipps/Fipps-Regular.otf";
-	private static final String _digiffiti  = "fonts/digiffiti.ttf"; // no apostrophe :(
-	private static final String _04b_30  = "fonts/04b_30/04B_30__.TTF";
+	protected static final String _8bit_wonder  = "fonts/8bit_wonder/8-BIT WONDER.TTF"; // no apostrophe :(
+	protected static final String _fipps  = "fonts/fipps/Fipps-Regular.otf";
+	protected static final String _digiffiti  = "fonts/digiffiti.ttf"; // no apostrophe :(
+	protected static final String _04b_30  = "fonts/04b_30/04B_30__.TTF";
 
 	
 	private static final String fontPath = _04b_30;

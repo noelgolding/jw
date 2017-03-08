@@ -9,19 +9,20 @@ import l337.game.utils.tiled.TileMap.TileSetListNullPointerException;
 import l337.game.utils.tiled.TileSprite;
 import l337.game.utils.tiled.TmxLoader;
 import poponod.jonah.game.scenes.GamePlayScene;
+import poponod.jonah.game.scenes.levels._06_NegativeTileMapTestScene;
 import poponod.jonah.sprites.Jonah;
 
-public class _04_IndoorTestScene extends GamePlayScene{
+public class _05_NegativeIndoorTestScene extends GamePlayScene {
 
-	public _04_IndoorTestScene(SceneBasedGame game) {
+	public _05_NegativeIndoorTestScene(SceneBasedGame game) {
 		super(game);
 	}
 
 	@Override
-	public void init() {		
+	public void init() {
 		TileMap tileMap = null;
 		try {
-			tileMap = TmxLoader.loadMap(game.getAssetManager(), "Test_world_inside.tmx");
+			tileMap = TmxLoader.loadMap(game.getAssetManager(), "Test_world_inside_negative.tmx");
 		} catch (TileSetListNullPointerException e) {
 			throw new RuntimeException(e);
 		}
@@ -43,9 +44,14 @@ public class _04_IndoorTestScene extends GamePlayScene{
 		
 		SimpleBitmapSprite simpleBitmapSprite = new SimpleBitmapSprite(game, assetMgr.getImage("misc/endSprite.png"));
 		simpleBitmapSprite.centerAlign().middleAlign().canCollideWith(hero);
-		initEnd(simpleBitmapSprite, _05_NegativeIndoorTestScene.class.getName());
+		initEnd(simpleBitmapSprite, _06_NegativeTileMapTestScene.class.getName());
 		
 		initHero(jonah);
-	}
-
+	}	
+	
+//	@Override
+//	public void draw(Graphics g) {
+//		super.draw(g);
+//		g.
+//	}
 }

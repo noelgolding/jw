@@ -37,7 +37,7 @@ public class OptionsMenuScene extends GameMenuScene {
 			// set the next scene
 			// end current scene
 			game.keysdown.put(KeyEvent.VK_ESCAPE, false);
-			setNextScene(new StartMenuScene(game));
+			setNextScene(new StartMenuScene(game)); // should return to previous scene
 			end();
 		}
 	}

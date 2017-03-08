@@ -33,10 +33,10 @@ public abstract class GamePlayScene extends AbstractScene {
 	
 	@Override
 	public void update(float delta) {
-		if (game.keysdown.getOrDefault(KeyEvent.VK_ESCAPE, false)) {
+		if (game.keysdown.getOrDefault(KeyEvent.VK_ALT, false)) {
 			// set the next scene
 			// end current scene
-			game.keysdown.put(KeyEvent.VK_ESCAPE, false);
+			game.keysdown.put(KeyEvent.VK_ALT, false);
 			setNextScene(new OptionsMenuScene(game));
 			end();
 		}

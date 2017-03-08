@@ -27,3 +27,12 @@ Create Options Menu
 	Menu sounds on/off (maybe slider?)
 Activate menu options in Main Menu
 Activate menu options in Options Menu
+
+
+Add negative attribute to ??Sprite
+Create Negative Images... In Gimp
+1. Color > Auto > White Balance
+2. Color > Invert
+3. Save
+
+asset name cleanup and convention

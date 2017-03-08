@@ -22,10 +22,17 @@ public class Jonah extends AnimatedBitmapSprite{
 	private float vy = 0;
 	
 	private int speed_multiplier;
+
+	private boolean negative;
+	
+	public Jonah(Game game, Image[] frames, boolean negative) {
+		super(game, frames, 5);
+		this.negative = negative;
+		Stream.of(left, right, back, front).forEach(a -> initAnimations(a)); 
+	}
 	
 	public Jonah(Game game, Image[] frames) {
-		super(game, frames, 5);
-		Stream.of(left, right, back, front).forEach(a -> initAnimations(a)); 
+		this(game, frames, false);
 	}
 	
 	private void initAnimations(Image[] anim){
@@ -38,7 +45,7 @@ public class Jonah extends AnimatedBitmapSprite{
 			direction = "Back";
 		}
 		for (int i = 0; i < numFrames; i++) {
-			anim[i] = game.getAssetManager().getImage(String.format("player/%s_%02d.png", direction, i+1));
+			anim[i] = game.getAssetManager().getImage(String.format("player/%s_%02d%s.png", direction, i+1, (negative ? "_negative" : "")));
 		}
 	}
 	
@@ -82,7 +89,7 @@ public class Jonah extends AnimatedBitmapSprite{
 		collision_detection();
 		
 		if (vx != 0 || vy != 0){
-			if (animElapsedTime >= 1/fps) { // TODO implement Animation
+			if (animElapsedTime >= 1/(fps*speed_multiplier)) { // TODO implement Animation
 				currentKeyFrame++;
 				animElapsedTime = 0;
 			}

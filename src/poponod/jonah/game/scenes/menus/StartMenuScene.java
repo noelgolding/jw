@@ -26,10 +26,10 @@ public class StartMenuScene extends GameMenuScene  {
 			end();
 		}
 		
-		if (game.keysdown.getOrDefault(KeyEvent.VK_O, false)) {
+		if (game.keysdown.getOrDefault(KeyEvent.VK_ALT, false)) {
 			// set the next scene
 			// end current scene
-			game.keysdown.put(KeyEvent.VK_O, false);
+			game.keysdown.put(KeyEvent.VK_ALT, false);
 			setNextScene(new OptionsMenuScene(game));
 			end();
 		}
