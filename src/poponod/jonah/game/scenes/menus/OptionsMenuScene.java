@@ -1,6 +1,5 @@
 package poponod.jonah.game.scenes.menus;
 
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 
 import l337.game.SceneBasedGame;
@@ -11,7 +10,9 @@ public class OptionsMenuScene extends GameMenuScene {
 	private boolean menuSoundsOn = true;
 	
 	public OptionsMenuScene(SceneBasedGame game) {
-		super(game, "Options", Color.MAGENTA, Color.CYAN);
+		super(game, "Options");
+		
+		
 		
 		/**
 		 * 	Music on/off (maybe slider?)

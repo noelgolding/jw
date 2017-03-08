@@ -8,6 +8,7 @@ import l337.game.scene.AbstractScene;
 import l337.game.sprite.Sprite;
 import l337.game.utils.KeyState;
 import l337.game.utils.SceneFactory;
+import poponod.jonah.game.scenes.menus.OptionsMenuScene;
 
 public abstract class GamePlayScene extends AbstractScene {
 
@@ -32,7 +33,17 @@ public abstract class GamePlayScene extends AbstractScene {
 	
 	@Override
 	public void update(float delta) {
+		if (game.keysdown.getOrDefault(KeyEvent.VK_ESCAPE, false)) {
+			// set the next scene
+			// end current scene
+			game.keysdown.put(KeyEvent.VK_ESCAPE, false);
+			setNextScene(new OptionsMenuScene(game));
+			end();
+		}
+
+		
 		super.update(delta);
+		
 		// TODO remove after testing, short circuit to get to next level
 		if(endSceneSprite != null && game.getKeyState().get(KeyEvent.VK_PERIOD) == KeyState.JustPressed){
 			hero.setPosition(endSceneSprite.getCenterX(), endSceneSprite.getY() - hero.getHeight() - 1);

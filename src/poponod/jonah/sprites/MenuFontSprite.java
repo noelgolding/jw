@@ -2,29 +2,54 @@ package poponod.jonah.sprites;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.FontFormatException;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URISyntaxException;
 
 import l337.game.Game;
 import l337.game.sprite.FontSprite;
 
 public class MenuFontSprite extends FontSprite {
+	/** eh, not really great */
+	private static final String _style_7_bubble_bead  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_bead.ttf";
+	private static final String _pixel_noir  = "fonts/pixel_noir/Pixel-Noir.ttf";
+	private static final String _pixel_noir_skinny_caps  = "fonts/pixel_noir/Pixel-Noir Skinny Caps.ttf";
+	private static final String _pixel_noir_skinny_short  = "fonts/pixel_noir/Pixel-Noir Skinny Short.ttf";
+	private static final String _pixel_noir_skinny  = "fonts/pixel_noir/Pixel-Noir Skinny.ttf";
+
+	/** I kinda like these */
+	private static final String _v5xtender  = "fonts/v5xtender/V5Xtende.ttf";
+	private static final String _game_classic  = "fonts/freaky-fonts_gamegirl-classic/Gamegirl.ttf";
+	private static final String _style_7_half_bold  = "fonts/style-7_half-bold-pixel-7/half_bold_pixel-7.ttf";
+	private static final String _style_7_bubble  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7.ttf";
+	private static final String _style_7_bubble_hatch  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_hatch.ttf";
+	private static final String _style_7_bubble_dark  = "fonts/style-7_bubble-pixel-7/bubble_pixel-7_dark.ttf";
+	private static final String _pixel_noir_caps  = "fonts/pixel_noir/Pixel-Noir Caps.ttf";
+	private static final String _8bitLimit  = "fonts/8-bit Limit_BRK.ttf"; // no apostrophe :(
+	private static final String _8bitOLimit  = "fonts/8-bit Limit O (BRK).ttf"; // no apostrophe :(
+
+	
+	/** My favorites */
+	private static final String _8bit_wonder  = "fonts/8bit_wonder/8-BIT WONDER.TTF"; // no apostrophe :(
+	private static final String _fipps  = "fonts/fipps/Fipps-Regular.otf";
+	private static final String _digiffiti  = "fonts/digiffiti.ttf"; // no apostrophe :(
+	private static final String _04b_30  = "fonts/04b_30/04B_30__.TTF";
+
+	
+	private static final String fontPath = _04b_30;
 	private static Font menuFont = null;
 	
 	public MenuFontSprite(Game game, String string, Color color) {
 		super(game, string, color, getMenuFont());
 	}
 
-	private static Font getMenuFont() {
+	protected static Font getMenuFont() {
 		if (menuFont == null) {
 			try {
 				
-				InputStream source = MenuFontSprite.class.getClassLoader().getResourceAsStream("fonts/04B_30__.TTF");
-				File destination = new File(new File(MenuFontSprite.class.getClassLoader().getResource("fonts/tmp").toURI()), + System.nanoTime() + ".tmp");
+				InputStream source = MenuFontSprite.class.getClassLoader().getResourceAsStream(fontPath);
+				File destination = new File(System.getProperty("java.io.tmpdir") + "/" + System.nanoTime() + ".tmp");
 				
 				if (destination.exists()) {
 					if (destination.isDirectory()) {
@@ -50,8 +75,7 @@ public class MenuFontSprite extends FontSprite {
 				output.close();
 				source.close();
 				
-				
-				menuFont = Font.createFont(Font.TRUETYPE_FONT, destination).deriveFont(36f);
+				menuFont = Font.createFont(Font.TRUETYPE_FONT, destination);
 			} catch (Exception e) {
 				e.printStackTrace();
 				menuFont = DEFAULT_FONT;
