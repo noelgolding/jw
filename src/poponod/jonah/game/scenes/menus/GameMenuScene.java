@@ -1,7 +1,6 @@
 package poponod.jonah.game.scenes.menus;
 
 import java.awt.Color;
-import java.util.stream.IntStream;
 
 import l337.game.SceneBasedGame;
 import l337.game.scene.AbstractMenuScene;

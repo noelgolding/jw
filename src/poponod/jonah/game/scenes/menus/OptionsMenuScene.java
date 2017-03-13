@@ -12,25 +12,16 @@ public class OptionsMenuScene extends GameMenuScene {
 	public OptionsMenuScene(SceneBasedGame game) {
 		super(game, "Options");
 		
-		
-		
 		/**
-		 * 	Music on/off (maybe slider?)
-	Sfx on/off (maybe slider?)
-	Menu sounds on/off (maybe slider?)
-
+			Music on/off (maybe slider?)
+			Sfx on/off (maybe slider?)
+			Menu sounds on/off (maybe slider?)
 		 */
 		menuItems.add(new GameMenuItem("Music " + (musicOn ? "off" : "on"), null));
 		menuItems.add(new GameMenuItem("Sound effects " + (sfxOn ? "off" : "on"), null));
 		menuItems.add(new GameMenuItem("Menu sounds " + (menuSoundsOn ? "off" : "on"), null));
 	}
 
-//	@Override
-//	public void init() {
-//		super.init(); // TODO I don't want to have to remember to call super.init all the time.
-//		// TODO Add menu items here.
-//
-//	}
 	@Override
 	public void update(float delta) {
 		if (game.keysdown.getOrDefault(KeyEvent.VK_ESCAPE, false)) {

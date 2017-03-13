@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 import l337.game.Game;
 import l337.game.sprite.AnimatedBitmapSprite;
+import l337.game.utils.KeyState;
 
 public class Jonah extends AnimatedBitmapSprite{
 	final int numFrames = 4;
@@ -62,6 +63,12 @@ public class Jonah extends AnimatedBitmapSprite{
 	}
 
 	private void handle_inputs() {
+		if (game.getKeyState().get(KeyEvent.VK_L) == KeyState.JustPressed) {
+			System.out.println(String.format("(%d, %d)", getX(), getY()));
+		}
+		
+		
+		
 		speed_multiplier = game.getKeysDown().getOrDefault(KeyEvent.VK_SHIFT, false) ? 5 : 1;
 		if (game.getKeysDown().getOrDefault(KeyEvent.VK_LEFT, false) || game.getKeysDown().getOrDefault(KeyEvent.VK_A, false)) {
 			setFrames(left);
@@ -85,7 +92,6 @@ public class Jonah extends AnimatedBitmapSprite{
 		x += vx * delta * speed_multiplier;
 		y += vy * delta * speed_multiplier;
 		
-		// TODO check collision_detection, then update key frame?
 		collision_detection();
 		
 		if (vx != 0 || vy != 0){
@@ -100,6 +106,13 @@ public class Jonah extends AnimatedBitmapSprite{
 	}
 
 	private void collision_detection() {
-		// TODO Auto-generated method stub
+		if (x < 0 || getRight() > game.getWorldWidth() - 1) {
+			vx = 0; 
+			currentKeyFrame = Math.random() >= .5 ? 0 : 2; // TODO implement State
+		}
+		if (y < 0 || getBottom() > game.getWorldHeight() - 1) {
+			vy = 0;
+			currentKeyFrame = Math.random() >= .5 ? 0 : 2; // TODO implement State
+		}
 	}
 }

@@ -9,6 +9,7 @@ import l337.game.utils.tiled.TileMap.TileSetListNullPointerException;
 import l337.game.utils.tiled.TileSprite;
 import l337.game.utils.tiled.TmxLoader;
 import poponod.jonah.game.scenes.GamePlayScene;
+import poponod.jonah.game.scenes.levels._06_NegativeTileMapTestScene;
 import poponod.jonah.sprites.Jonah;
 
 public class _04_IndoorTestScene extends GamePlayScene{
@@ -43,7 +44,7 @@ public class _04_IndoorTestScene extends GamePlayScene{
 		
 		SimpleBitmapSprite simpleBitmapSprite = new SimpleBitmapSprite(game, assetMgr.getImage("misc/endSprite.png"));
 		simpleBitmapSprite.centerAlign().middleAlign().canCollideWith(hero);
-		initEnd(simpleBitmapSprite, _05_NegativeIndoorTestScene.class.getName());
+		initEnd(simpleBitmapSprite, _06_NegativeTileMapTestScene.class.getName());
 		
 		initHero(jonah);
 	}

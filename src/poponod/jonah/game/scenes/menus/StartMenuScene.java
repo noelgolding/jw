@@ -9,10 +9,10 @@ public class StartMenuScene extends GameMenuScene  {
 	public StartMenuScene(SceneBasedGame game) {
 		super(game, game.getTitle());
 		
-		this.menuItems.add(new GameMenuItem("New Game", null));
-		this.menuItems.add(new GameMenuItem("Continue", null));
+		this.menuItems.add(new GameMenuItem("Continue", null)); // TODO if no history, gray this out
+		this.menuItems.add(new GameMenuItem("Restart", null)); // TODO if no history, label this as "Start"
 		this.menuItems.add(new GameMenuItem("Options", null));
-		this.menuItems.add(new GameMenuItem("Exit Game", null));
+		this.menuItems.add(new GameMenuItem("Exit", null));
 	}
 	
 	@Override

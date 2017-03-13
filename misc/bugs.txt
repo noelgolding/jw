@@ -1,4 +1,5 @@
 fix scene stack/manager - options menu should always return to the previous scene
-A given TileMap needs to have all tilesets used be the same size.  Jonah needs to fix test_world_01.tmx
-There is a pause before the Start Menu scene is displayed, maybe all scenes... Wassup?.
+-- kind of fixed, maybe can do bottom up instead of top down -- maybe have the map only have one tile per cell
+	A given TileMap needs to have all tilesets used be the same size.  Jonah needs to fix test_world_01.tmx
+There is a pause before the Start Menu scene is displayed, maybe do a loading splash screen?.
 There is a pause before input is handled, is this real or perceived?.

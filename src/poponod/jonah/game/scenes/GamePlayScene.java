@@ -46,7 +46,7 @@ public abstract class GamePlayScene extends AbstractScene {
 		
 		// TODO remove after testing, short circuit to get to next level
 		if(endSceneSprite != null && game.getKeyState().get(KeyEvent.VK_PERIOD) == KeyState.JustPressed){
-			hero.setPosition(endSceneSprite.getCenterX(), endSceneSprite.getY() - hero.getHeight() - 1);
+			hero.setPosition(endSceneSprite.getCenterX() - (hero.getWidth() / 2), endSceneSprite.getBottom() + 1);
 		}
 		
 		// check for exit condition
